@@ -1,0 +1,58 @@
+<section>
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="/img/login.jpg" alt="login form" class="img-fluid banner-img"
+                style="border-radius: 1rem 0 0 1rem; height: 100%;" />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+
+                <form action="/register" method="POST">
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <span class="h1 fw-bold mb-0">Sign Up</span>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"></h5>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="fname">First Name</label>
+                    <input type="text" id="fname" name="fname" class="form-control form-control-lg" />
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lname" class="form-control form-control-lg" />
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="email">Email address</label>
+                    <input type="email" id="email" name="email" class="form-control form-control-lg" />
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="address">Address</label>
+                    <input type="text" name="address" class="form-control" required/>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control form-control-lg" />
+                  </div>
+
+                  <button type="submit" class="btn btn-success btn-block btn-lg">Sign Up</button>
+
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account? <a href="/login"
+                      style="color: #393f81;">Login here</a></p>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="/css/admin.css">
+<script src="/js/manageProducts.js"></script>
+
+<h4 class="display-5 fw-bold"><i class="bi bi-table"></i> Orders</h4>
+<div class=" product-table my-5">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered table-image">
+                <thead>
+                    <tr>
+                        <th scope="col">Order ID</th>
+                        <th scope="col">Order TYPE</th>
+                        <th scope="col">Items</th>
+                        <th scope="col">Buyer's Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Manage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(orders !="" ){ %>
+                        <% orders.forEach(function(p,index){%>
+                            <tr>
+                                <th scope="row">
+                                    <%= p._id %>
+                                </th>
+                                <td><%= p.items[0].name.productType %></td>
+                                <td >
+                                    <% p.items.forEach(function(i,index){%>
+                                        <ul>
+                                            <li><%= i.name.name %></li>
+                                        </ul>
+                                    <% }) %>
+                                </td>
+                                <td>
+                                    <%= p.buyerName %>
+                                </td>
+                                <td>
+                                    <%= p.address %>
+                                </td>
+                                <td>
+                                    ₹ <%= p.totalPrice %>
+                                </td>
+                                <td>
+                                    <%= p.status %>
+                                </td>
+                                <% if(  p.status!= 'delivered' ){ %> 
+                                <td>
+                                
+                                    <a class="btn btn-success" href="/delivered/<%= p._id %>"><i
+                                            class="bi bi-pencil-square"></i>Mark As Delivered</a>
+
+                                    <a class="btn btn-danger" href="/deleteOrder/<%= p._id %>"><i
+                                            class="bi bi-trash-fill"></i> Cancel/Delete</a>
+
+                                </td>
+                                <% } %>
+                            </tr>
+                            </a>
+                            <% }) %>
+                                <% } else { %>
+                                    <p>No items founds</p>
+                                    <% } %>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

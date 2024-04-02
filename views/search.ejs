@@ -1,0 +1,79 @@
+
+
+<h1 class="pb-4">Search Result</h1>
+<button onclick="showFilter()" class="btn btn-primary" id="filterBtn">Filters</button>
+
+<div id="filter">
+    <div class="container d-flex justify-content-center ">
+        <div class=" border rounded p-4">
+            <form action="/search" method="POST">
+                <input type="checkbox" name="fast" id="FastDelivery" <% if(typeof fast!='undefined' ){ %>checked<%}%>>
+                    <label for="FastDelivery" class="px-4">Fast Delivery</label>
+                    
+                    <script src="/js/cities.js"></script>
+                    <label for="state" class="form-label">Location</label>
+                    <select onchange="print_city('state', this.selectedIndex);" id="sts" name ="state" class="search-input" required></select>
+                    <select id ="state" name="city" class="search-input"  required> <option value="volvo">Select City</option></select>
+                    <script language="javascript">print_state("sts");</script>
+                                    
+    
+                    <input type="hidden" name="searchTerm" value="<%=searchTerm%>">
+                    <button class="btn btn-secondary search-filter-btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                        </svg></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    let filter = document.getElementById("filter");
+    let filterBtn = document.getElementById("filterBtn");
+    filter.style.display="none";
+    
+    function showFilter()
+    {
+        filter.style.display = "block";
+        
+        filterBtn.style.display = "none";
+    }
+
+
+</script>
+
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 text-center pb-5">
+
+    <% if(result !='' ){ %>
+        <% result.forEach(function(product,index){%>
+            <div class="col-4">
+                <a href="/view-product/<%= product._id %>" class="text-center category__link--nohover">
+                    <div class="card shadow-sm ">
+
+                        <div class="card-image">
+                            <img src="/uploads/<%= product.image %>" class="bd-placeholder-img">
+                        </div>
+                        <div class="card-body card-footer">
+                            <% if(product.productType=="flash" ){ %>
+                                <h5 class="fw-bold"> <i class="bi bi-fast-forward-fill"></i> Fast Delivery</h1>
+                                    <%}%>
+                                        <h5 class="fw-bold">
+                                            <%= product.brand %>
+                                                </h1>
+                                                <p class="card-text fw-light text-truncate">
+                                                    <%= product.name %>
+                                                </p>
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <h3 class="">$ <%= product.price %>
+                                                    </h3>
+                                                </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <% }) %>
+                <% } %>
+
+</div>

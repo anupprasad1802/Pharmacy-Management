@@ -1,0 +1,155 @@
+:root{
+    --bs-font-sans-serif: 'Rubik', sans-serif;
+}
+
+.container-xxl{
+    max-width: 1530px;
+}
+
+.container-xxl-admin{
+    max-width: 1700px;
+    background-color: red;
+}
+
+body{
+    /* background-image: url("/img/i-like-food.svg"); */
+    background-color: rgb(255, 255, 255);
+}
+
+a{
+    color: var(--bs-dark);
+}
+
+/* Category Card */
+
+.category__link{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    transition: 250ms all;
+}
+
+.category__link:hover{
+    transform: scale(1.1);
+}
+
+.category__img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     height: 200px;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.category__img--large{
+    height: 330px;
+    width: 660px;
+}
+
+.category__link--nohover{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    transition: 250ms all;
+}
+
+.category__img img{
+    width: 100%;
+    object-fit: cover;
+}
+.card-image{
+    height: 260px;
+
+    max-height: 260px;
+
+}
+
+.card-image img{
+    height: inherit;
+}
+
+
+.product-image{
+    height: 600px;
+    max-height: 600px;
+    max-width: 600px;
+}
+
+.cart-image{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
+.product-image img{
+    height: inherit;
+}
+.flash-image{
+    width: 20px;
+}
+
+.address-panel{
+    padding: 25px;
+}
+
+body{
+    /* background:#E3F2FD; */
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #filter{
+    display: inline-block;
+  }
+
+  .form-control{
+    display: inline;
+  }
+
+.search-input{
+    height: 45px;
+    width: 275px;
+}
+
+.search-filter-btn{
+    height: 45px;
+}

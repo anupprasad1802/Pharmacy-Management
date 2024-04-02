@@ -1,0 +1,35 @@
+<h4 class="display-5 fw-bold my-4" ><i class="bi bi-kanban-fill"></i> Dashboard</h4>
+
+<h3>Hello, <%=userInfo.name%></h3>
+
+<div class="container">
+    <div class="row">
+        
+        <div class="col-sm-6 col-lg-3 card mx-2 my-4 ">
+            <div class="card-body ">
+              <h5 class="card-title"><i class="bi bi-table"></i> Orders</h5>
+              <p class="card-text">Easily manage and track your orders with just a few clicks.</p>
+              <a href="/orders" class="btn btn-primary">Go to Orders</a>
+            </div>
+          </div>
+    
+          <div class="col-sm-6 col-lg-3 card mx-2 my-4">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-people"></i> Manager users</h5>
+              <p class="card-text">Effortlessly manage your website's users and their permissions with our intuitive admin site.</p>
+              <a href="/users/0" class="btn btn-primary my-2">Customers</a>
+              <a href="/users/2" class="btn btn-success my-2">Retailers</a>
+              <a href="/users/1" class="btn btn-danger">Staff</a>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3 card mx-2 my-4">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-grid-fill"></i> Manage Products</h5>
+              <a href="/view-all-products" class="btn btn-primary my-2">View Product</a>
+              <a href="/submit-product" class="btn btn-success">Add New Product</a>
+            </div>
+          </div>
+    </div>
+
+</div>

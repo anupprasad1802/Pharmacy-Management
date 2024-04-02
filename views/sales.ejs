@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="/css/admin.css">
+<script src="/js/manageProducts.js"></script>
+
+<h4 class="display-5 fw-bold"><i class="bi bi-table"></i> Sales</h4>
+
+<% if(orders !="" ){ %>
+<div class="container">
+    <div class="row ">
+            <div class="col-4 card mx-2 my-4 text-center bg-success text-white"> 
+                <div class="card-body">
+                  <h1 class="card-title">₹ <%=total%></h1>
+                  <p class="card-text">Total value of your sales.</p>
+                  <h6 class="card-title">Based on list price</h6>
+                </div>
+              </div>
+              <div class="col-4 card mx-2 my-4 text-center bg-warning text-white "> 
+                  <div class="card-body">
+                    <h3 class="card-text ">Number of sales</h3>
+                  <h1 class="card-title"><%= orders.length %></h1>
+                </div>
+              </div>
+    </div>
+</div>
+
+<div class=" product-table my-5">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered table-image">
+                <thead>
+                    <tr>
+                        <th scope="col">Order ID</th>
+                        <th scope="col">Items</th>
+                        <th scope="col">Buyer's Name</th>
+                        <th scope="col">Item Sales Count</th>
+                        <th scope="col">Earnings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <% orders.forEach(function(p,index){%>
+                            <tr>
+                                <th scope="row" style="max-width: 60px;">
+                                    <%= p._id %>
+                                </th>
+                                <td><%= p.items[0].name.productType %></td>
+                                <td style="max-width: 60px;">
+                                    <% p.items.forEach(function(i,index){%>
+                                        <ul>
+                                            <li><%= i.name.name %></li>
+                                        </ul>
+                                    <% }) %>
+                                </td>
+                                <td>
+                                    <%= p.buyerName %>
+                                </td>
+                                <td>
+                                    ₹ <%= p.totalPrice %>
+                                </td>
+                            </tr>
+
+                            <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<% } else { %>
+    <p>No items founds</p>
+    <% } %>

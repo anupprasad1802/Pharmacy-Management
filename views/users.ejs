@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="/css/admin.css">
+<script src="/js/manageProducts.js"></script>
+
+<% if(allUsers!=''){ %>
+<div class="px-4">
+    <h4 class="display-5 fw-bold">
+      <% if(allUsers[0].type==0){ %>
+        <i class="bi bi-person"></i> Customer
+      <% } else if(allUsers[0].type==1) { %>
+        <i class="bi bi-gear-fill"></i> Staffs
+        <% } else { %>
+          <i class="bi bi-person-check-fill"></i> Retailers
+          <% } %>
+    </h4>
+</div>
+  <div class=" product-table my-5">
+    <div class="row">
+      <div class="col-12">
+          <table class="table table-bordered table-image">
+            <thead>
+              <tr>
+                <th scope="col">User Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Manage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% allUsers.forEach(function(user,index){%>
+                <tr>
+                    <th scope="row"><%= user._id %></th>
+                    <td><%= user.fname +" "+ user.lname%></td>  
+                    <td><%= user.email %></td>
+                    <td>
+                        <!-- Add Event On Button Click -->
+                        <a class="btn btn-danger" href="/deleteUsers/<%= user._id %>">Delete</a>
+                    </td>
+                  </tr>
+            </a>
+            <% }) %>
+              
+            </tbody>
+          </table>   
+      </div>
+    </div>
+  </div>
+  
+<% } else { %>
+    <p>No items founds</p>
+<% } %>

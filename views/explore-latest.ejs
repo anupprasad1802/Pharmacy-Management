@@ -1,0 +1,28 @@
+<h1 class="pb-4">Explore-Latest</h1>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 text-center pb-5">
+
+    <% if(result != ''){ %>
+        <% result.forEach(function(product,index){%>
+                <div class="col-4">
+                    <a href="/view-product/<%= product._id %>" class="text-center category__link--nohover">
+                        <div class="card shadow-sm ">
+                           
+                            <div class="card-image">
+                                <img src="/uploads/<%= product.image %>" class="bd-placeholder-img">
+                            </div>
+                            <div class="card-body card-footer">
+                                <% if(product.productType=="flash"){ %>
+                                        <h5 class="fw-bold"> <i class="bi bi-fast-forward-fill"></i> Fast Delivery</h1>
+                                    <%}%>
+                                <h5 class="fw-bold"><%= product.brand %></h1>
+                                <p class="card-text fw-light text-truncate"> <%= product.name %> </p>
+                                <div class="d-flex justify-content-center align-items-center"><h3 class="">$ <%= product.price %></h3></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+        <% }) %>
+    <% } %>
+
+</div>

@@ -1,0 +1,40 @@
+<% if(product != null){ %>
+ 
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Home</li>
+          <li class="breadcrumb-item active" aria-current="page"><%= product.name %></li>
+        </ol>
+    </nav>
+    
+    <div class="row">
+        <div class="col-12 col-md-4 product-image">
+            <img src="/uploads/<%- product.image %>" class="img-fuild sticky-top img-thumbnail" style="top:20px;" loading="lazy" alt="">
+        </div>
+
+        <div class="col-12 col-md-8">
+            <div class="row">
+                
+                <div class="col-12"><h1><%- product.name %></h1></div>
+                <div class="col-12 mb-4"> <i class="bi bi-tag"><%- product.brand %></i> </div>
+                <div class="col-12"><h1> ₹ <%- product.price %></h1></div>
+                <form action="/add-to-cart" method="POST">
+                    <input type="hidden" id="productId" name="productId" value="<%- product._id %>">
+                    <button type="submit" class="btn btn-primary col-3" >Add To Cart</button>
+                </form>
+                <div class="col-12" style="white-space: pre-line;">
+                    <h4>Product details</h4>
+                    <%- product.description %>
+                </div>
+            </div>
+
+            <div class="row pt-4">
+                <div class="col-12">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+<% }else{ %>
+    <p>No Item Found.</p>
+<% } %>

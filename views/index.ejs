@@ -1,0 +1,57 @@
+
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+        <img src="/img/hero.png" width="607" height="510" class="d-block mx-lg-auto img-fluid" loading="lazy"
+            alt="">
+    </div>
+
+    <div class="col-12 col-lg-6">
+        <h1 class="display-5 fw-bold mb-3">
+            Get your Meds delivered within 2 hours.
+        </h1>
+        <p class="lead">
+            Experience the future of pharmacy services with lightning-fast delivery at your fingertips.
+        </p>
+        <% if(userInfo == 'undefined'){ %>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a href="/#" class="btn btn-success btn-lg px-4 me-md-2">Sign Up</a>
+            </div>
+        <%}%>
+        
+    </div>
+</div>
+
+<!-- Categories start -->
+
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-5 align-items-center">
+        <h2>Latest</h2>
+    </div>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 text-center">
+
+        <% if(products != ''){ %>
+            <% products.latest.forEach(function(product,index){%>
+                    <div class="col">
+                        <a href="/view-product/<%= product._id %>" class="text-center category__link--nohover">
+                            <div class="card shadow-sm ">
+                                <div class="card-image">
+                                    <img src="/uploads/<%= product.image %>" class="bd-placeholder-img">
+                                </div>
+                                <div class="card-body card-footer">
+                                    <h5 class="fw-bold"><%= product.brand %></h1>
+                                    <p class="card-text fw-light text-truncate"> <%= product.name %> </p>
+                                    <div class="d-flex justify-content-center align-items-center"><h3 class="">₹ <%= product.price %></h3></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+            <% }) %>
+        <% } %>
+
+    </div>
+</section>
+
+<!-- Latest End -->
+

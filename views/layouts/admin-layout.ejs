@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Admin
+    </title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Rubik:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/img/icon.png">
+    <link href="/css/sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    
+    <div class="d-flex " id="wrapper">
+        <!-- Sidebar-->
+        <div class="border-end bg-white" id="sidebar-wrapper">
+            <div class="sidebar-heading border-bottom bg-light"><i class="bi bi-gear-fill"></i> Admin Panel</div>
+            <div class="list-group list-group-flush">
+                <a class="list-group-item list-group-item-action p-3" href="/admin"><i class="bi bi-kanban-fill"></i> Dashboard</a>
+                <a class="list-group-item list-group-item-action p-3" href="/orders"><i class="bi bi-table"></i> Orders</a>
+                <a class="list-group-item list-group-item-action p-3" href="/sales"><i class="bi bi-graph-up"></i> Sales</a>
+                <div class="sidebar-heading border-bottom"><i class="bi bi-people"></i> Manage Users</div>
+                <a class="list-group-item list-group-item-action p-3" href="/users/0"><i class="bi bi-person"></i> Customers</a>
+                <a class="list-group-item list-group-item-action p-3" href="/users/2"><i class="bi bi-person-check-fill"></i> Retailers</a>
+                <a class="list-group-item list-group-item-action p-3" href="/users/1"><i class="bi bi-person-gear"></i> Staff</a>
+                <div class="sidebar-heading border-bottom"><i class="bi bi-grid-fill"></i> Manage Products</div>
+                <a class="list-group-item list-group-item-action p-3" href="/view-all-products"><i class="bi bi-eye-fill"></i> View Products</a>
+                <a class="list-group-item list-group-item-action p-3" href="/submit-product"><i class="bi bi-plus-square-fill"></i> Add New</a>
+            </div>
+        </div>
+        <!-- Page content wrapper-->
+        <div id="page-content-wrapper">
+            <!-- Top navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                            <li class="nav-item active"><a class="nav-link" href="/"><i class="bi bi-arrow-clockwise"></i> Switch to buying</a></li>
+                            <% if(typeof userInfo != 'undefined' && userInfo != '') {%>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-person"></i> <%= userInfo.name %></a>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="/logout"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                              </div>
+                          </li>
+                          <% } %>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Page content-->
+            <div class="container-fluid">
+                <%- body -%>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+
+<!-- <footer class="row row-cols-5 py-5 my-5 border-top m-0 fixed-bottom">
+    <div class="col">
+      <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+      <p class="text-muted">© 2021</p>
+    </div>
+
+    <div class="col">
+
+    </div>
+
+    <div class="col">
+      <h5>Section</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <h5>Section</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <h5>Section</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+      </ul>
+    </div>
+  </footer> -->
+</div>
+</html>

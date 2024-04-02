@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/css/admin.css">
+<script src="/js/manageProducts.js"></script>
+<div class=" product-table my-5">
+    <div class="row">
+      <div class="col-12">
+          <table class="table table-bordered table-image">
+            <thead>
+              <tr>
+                <th scope="col">Product Id</th>
+                <th scope="col" >Product Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Price</th>
+                <th scope="col">Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% if(product != ""){ %>
+                    <% product.forEach(function(p,index){%>
+                    <tr>
+                        <td scope="row"  style="max-width: 60px;"><%= p._id %></td>
+                        <td>
+                                <img src="/uploads/<%= p.image %>" class="product-thumbnail"  alt="<%= p.name %>">
+                        </td>
+                        <td style="max-width: 60px;"> <%= p.name %></td>  
+                        <td><%= p.brand %></td>
+                        <td>₹ <%= p.price %></td>
+                        <td>
+                            <!-- Add Event On Button Click -->
+                            <a class="btn btn-primary" target=”_blank”  href="/view-product/<%= p._id %>"><i class="bi bi-eye-fill"></i></a>
+                            
+                              <a href=""><%=p.type%></a>
+                            <a class="btn btn-success" href="/edit-product/<%= p._id %>"><i class="bi bi-pencil-square"></i></a>
+                            
+                            <a class="btn btn-danger" href="/delete/<%= p._id %>"><i class="bi bi-trash-fill"></i></a>
+                            
+                            <!-- <button type="button" name="<%= p._id %>" class="btn btn-danger"></button> -->
+                        </td>
+                      </tr>
+                </a>
+                <% }) %>
+                <% } else { %>
+                    <p>No items founds</p>
+                    <% } %>
+              
+            </tbody>
+          </table>   
+      </div>
+    </div>
+  </div>
+
+    
