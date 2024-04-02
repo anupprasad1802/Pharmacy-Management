@@ -26,7 +26,7 @@
     "passport-google-oauth2": "^0.2.0",
     "paypal-rest-sdk": "^1.8.1",
     "promise": "^8.3.0",
-    "razorpay": "^0.0.0",
+    "razorpay": "^2.9.2",
     "request-promise": "^4.2.6"
   }
 }
