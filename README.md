@@ -46,16 +46,12 @@ npm run dev
 ```
 ## Screenshots 📸
 
-*Home page*
 <img src="screenshots/homepage.png" style="display: block;margin: auto; width: 60%;">
 
-*Product Catalog, Chatbot*
 <img src="screenshots/chatbot.png" style="display: block;margin: auto; width: 60%;">
 
-*Cart*
 <img src="screenshots/cart.png" style="display: block;margin: auto; width: 60%;">
 
-*Admin Dashboard*
 <img src="screenshots/admin.png" style="display: block;margin: auto; width: 60%;">
 
 
