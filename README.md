@@ -13,8 +13,8 @@ PharmaFlow is a comprehensive pharmacy management and e-commerce platform built 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/pharmaflow.git
-cd pharmaflow
+git clone https://github.com/anupprasad1802/Pharmacy-Management
+cd Pharmacy-Management
 ```
 
 2. Install dependencies:
