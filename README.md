@@ -31,7 +31,7 @@ RAZORPAY_SECRET_KEY=your_razorpay_secret
 
 4. Start the development server:
 ```bash
-npm run dev
+npm start
 ```
 
 The application will start running on `http://localhost:3000`
@@ -42,7 +42,7 @@ The application will start running on `http://localhost:3000`
 For development, the project uses nodemon to automatically restart the server when file changes are detected:
 
 ```bash
-npm run dev
+npm start
 ```
 ## Screenshots 📸
 
